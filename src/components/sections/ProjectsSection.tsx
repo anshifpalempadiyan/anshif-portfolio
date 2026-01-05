@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "@/components/motion/AnimatedSection";
 import { StaggerContainer, StaggerItem } from "@/components/motion/AnimatedSection";
-import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Github, ExternalLink, ChevronDown } from "lucide-react";
 
 const featuredProjects = [
   {
@@ -67,6 +67,7 @@ const moreProjects = [
 export const ProjectsSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [hoveredMoreIndex, setHoveredMoreIndex] = useState<number | null>(null);
+  const [isMoreExpanded, setIsMoreExpanded] = useState(false);
 
   return (
     <section id="projects" className="section-padding relative">
@@ -173,62 +174,91 @@ export const ProjectsSection = () => {
           ))}
         </StaggerContainer>
 
-        {/* More Projects Section */}
-        <AnimatedSection delay={0.3} className="mt-20">
-          <h3 className="text-2xl font-semibold text-center mb-8 text-muted-foreground">
-            More Projects
-          </h3>
-          <div className="grid md:grid-cols-3 gap-4">
-            {moreProjects.map((project, index) => (
-              <motion.a
-                key={project.title}
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative"
-                onHoverStart={() => setHoveredMoreIndex(index)}
-                onHoverEnd={() => setHoveredMoreIndex(null)}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
+        {/* More Projects Toggle */}
+        <AnimatedSection delay={0.3} className="mt-16">
+          <div className="flex justify-center">
+            <motion.button
+              onClick={() => setIsMoreExpanded(!isMoreExpanded)}
+              className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-transparent text-muted-foreground transition-all duration-250 hover:text-foreground"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="text-sm font-medium">More Projects</span>
+              <motion.span
+                animate={{ rotate: isMoreExpanded ? 180 : 0 }}
+                transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
               >
-                <motion.div
-                  className="glass rounded-xl p-5 h-full flex flex-col border border-border/30 transition-colors duration-250 hover:border-primary/30 hover:bg-surface-elevated/60"
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.25, ease: [0.25, 0.4, 0.25, 1] }}
-                >
-                  {/* Title with GitHub icon */}
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-lg font-medium group-hover:text-primary transition-colors duration-250">
-                      {project.title}
-                    </h4>
-                    <Github 
-                      size={18} 
-                      className="text-muted-foreground group-hover:text-primary transition-colors duration-250" 
-                    />
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-grow">
-                    {project.description}
-                  </p>
-
-                  {/* Tech stack */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-0.5 text-xs rounded-full bg-secondary/40 text-foreground/70 border border-border/20"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              </motion.a>
-            ))}
+                <ChevronDown 
+                  size={18} 
+                  className="transition-colors duration-250 group-hover:text-primary" 
+                />
+              </motion.span>
+            </motion.button>
           </div>
+
+          {/* Collapsible More Projects Grid */}
+          <AnimatePresence initial={false}>
+            {isMoreExpanded && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+                className="overflow-hidden"
+              >
+                <div className="grid md:grid-cols-3 gap-4 pt-8">
+                  {moreProjects.map((project, index) => (
+                    <motion.a
+                      key={project.title}
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative"
+                      onHoverStart={() => setHoveredMoreIndex(index)}
+                      onHoverEnd={() => setHoveredMoreIndex(null)}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.4 }}
+                    >
+                      <motion.div
+                        className="glass rounded-xl p-5 h-full flex flex-col border border-border/30 transition-colors duration-250 hover:border-primary/30 hover:bg-surface-elevated/60"
+                        whileHover={{ y: -4 }}
+                        transition={{ duration: 0.25, ease: [0.25, 0.4, 0.25, 1] }}
+                      >
+                        {/* Title with GitHub icon */}
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-lg font-medium group-hover:text-primary transition-colors duration-250">
+                            {project.title}
+                          </h4>
+                          <Github 
+                            size={18} 
+                            className="text-muted-foreground group-hover:text-primary transition-colors duration-250" 
+                          />
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-grow">
+                          {project.description}
+                        </p>
+
+                        {/* Tech stack */}
+                        <div className="flex flex-wrap gap-1.5">
+                          {project.tech.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-2 py-0.5 text-xs rounded-full bg-secondary/40 text-foreground/70 border border-border/20"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </motion.div>
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </AnimatedSection>
       </div>
     </section>
