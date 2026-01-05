@@ -34,12 +34,6 @@ const contactDetails = [
     value: "anshifpalempadiyan", 
     href: "https://linkedin.com/in/anshifpalempadiyan" 
   },
-  { 
-    icon: MessageCircle, 
-    label: "WhatsApp", 
-    value: "Send a message", 
-    href: "https://wa.me/918590189068" 
-  },
 ];
 
 export const ContactSection = () => {
@@ -136,7 +130,7 @@ export const ContactSection = () => {
 
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/918590189068"
+        href="https://wa.me/918590189068?text=Hi%20Anshif%2C%20I%20came%20across%20your%20portfolio"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg transition-all duration-250 hover:scale-105 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
