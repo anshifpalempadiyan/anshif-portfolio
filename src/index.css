@@ -73,6 +73,13 @@
   ::selection {
     @apply bg-primary/30 text-foreground;
   }
+
+  /* Normalize transitions for interactive elements */
+  button, a, [role="button"] {
+    @apply transition-all;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.25, 0.4, 0.25, 1);
+  }
 }
 
 @layer components {
