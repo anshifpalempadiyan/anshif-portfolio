@@ -11,8 +11,8 @@ const featuredProjects = [
     tech: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
     image: "🌍",
     color: "from-blue-500/20 to-cyan-500/20",
-    link: "#",
-    github: "#",
+    link: "https://github.com/advodigitals/alziyara-user-frontend.git",
+    github: "https://github.com/advodigitals/alziyara-user-frontend.git",
   },
   {
     title: "Tradiify",
@@ -20,8 +20,8 @@ const featuredProjects = [
     tech: ["Next.js", "Express", "PostgreSQL", "WebSocket"],
     image: "📈",
     color: "from-green-500/20 to-emerald-500/20",
-    link: "#",
-    github: "#",
+    link: "https://github.com/nihalavulan/tradiify-landing.git",
+    github: "https://github.com/nihalavulan/tradiify-landing.git",
   },
   {
     title: "AI-Powered CV Parser",
@@ -29,8 +29,8 @@ const featuredProjects = [
     tech: ["React", "Python", "OpenAI", "MongoDB", "FastAPI"],
     image: "🤖",
     color: "from-purple-500/20 to-pink-500/20",
-    link: "#",
-    github: "#",
+    link: "https://github.com/anshifpalempadiyan/ai-powered-cv-parsing-assignment.git",
+    github: "https://github.com/anshifpalempadiyan/ai-powered-cv-parsing-assignment.git",
   },
   {
     title: "RFP Management System",
@@ -38,8 +38,8 @@ const featuredProjects = [
     tech: ["React", "Node.js", "AI/ML", "AWS S3", "Redis"],
     image: "📋",
     color: "from-orange-500/20 to-red-500/20",
-    link: "#",
-    github: "#",
+    link: "https://github.com/anshifpalempadiyan/AI-RFP-Management-System.git",
+    github: "https://github.com/anshifpalempadiyan/AI-RFP-Management-System.git",
   },
 ];
 
@@ -179,7 +179,7 @@ export const ProjectsSection = () => {
           <div className="flex justify-center">
             <motion.button
               onClick={() => setIsMoreExpanded(!isMoreExpanded)}
-              className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-transparent text-muted-foreground transition-all duration-250 hover:text-foreground"
+              className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-transparent text-muted-foreground transition-all duration-250 hover:text-foreground border border-primary "
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

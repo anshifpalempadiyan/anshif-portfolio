@@ -7,7 +7,7 @@ const experiences = [
     title: "Full Stack Developer Intern",
     company: "Avulanture",
     period: "Jun 2025 – Dec 2025",
-    location: "Remote",
+    location: "Calicut, India",
     description: "Building scalable web applications using the MERN stack, implementing RESTful APIs, and optimizing application performance.",
     highlights: [
       "Developed 5+ production-ready features serving 1000+ users",

@@ -59,7 +59,7 @@ export const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {"<Dev />"}
+            {"ANSHIF.P"}
           </motion.a>
 
           {/* Desktop nav */}

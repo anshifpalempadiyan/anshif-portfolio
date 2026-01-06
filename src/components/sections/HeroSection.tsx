@@ -76,6 +76,12 @@ export const HeroSection = () => {
       </div>
 
       <div className="container-narrow text-center">
+        {/* Label */}
+          <div className="mb-6">
+            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-sm tracking-wider">
+              Available for hire
+            </span>
+          </div>
         {/* Main heading - primary animation on load */}
         <motion.h1
           variants={headlineAnim}
@@ -83,8 +89,8 @@ export const HeroSection = () => {
           animate="visible"
           className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-6"
         >
-          <span className="block">Full Stack</span>
-          <span className="text-gradient">MERN Developer</span>
+          <span className="block">ANSHIF.P</span>
+          <span className="text-gradient">MERN Stack Developer</span>
         </motion.h1>
 
         {/* Content appears after headline */}
@@ -93,12 +99,7 @@ export const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Label */}
-          <div className="mb-6">
-            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-sm tracking-wider">
-              Available for hire
-            </span>
-          </div>
+          
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
@@ -118,7 +119,7 @@ export const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-border bg-transparent px-8 py-6 text-base transition-all duration-250 ease-out hover:bg-secondary/30 hover:border-border/80"
+              className="border-border bg-transparent px-8 py-6 text-base transition-all duration-250 ease-out hover:bg-secondary/30 hover:border-primary hover:text-primary"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Contact Me
