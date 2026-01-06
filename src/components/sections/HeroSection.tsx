@@ -108,7 +108,7 @@ export const HeroSection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button
               size="lg"
               className="relative bg-primary text-primary-foreground px-8 py-6 text-base transition-all duration-250 ease-out hover:translate-y-[-2px] hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.5)] hover:bg-primary/95"
@@ -150,7 +150,7 @@ export const HeroSection = () => {
 
       {/* Scroll indicator - appears after content */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-1 left-1/2 -translate-x-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: prefersReducedMotion ? 0.3 : 0.8, duration: 0.5 }}

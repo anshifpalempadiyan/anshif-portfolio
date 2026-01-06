@@ -123,7 +123,7 @@ export const ContactSection = () => {
             using React & Framer Motion
           </p>
           <p className="text-muted-foreground/60 text-sm mt-2">
-            © {new Date().getFullYear()} All rights reserved.
+            © {new Date().getFullYear()} Developer <span className="text-primary">Anshif</span>. All rights reserved.
           </p>
         </AnimatedSection>
       </div>
