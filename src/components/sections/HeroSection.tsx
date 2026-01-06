@@ -48,7 +48,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 md:py-0"
     >
       {/* Static background - no animations for performance */}
       <div className="absolute inset-0 -z-10">
