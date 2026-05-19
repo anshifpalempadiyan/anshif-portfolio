@@ -4,11 +4,11 @@ import { Code2, Database, Cloud, Zap } from "lucide-react";
 
 export const AboutSection = () => {
   const techStack = [
-    { icon: Code2, label: "React & Node.js" },
-    { icon: Database, label: "MongoDB" },
-    { icon: Cloud, label: "AWS & Cloudflare" },
-    { icon: Zap, label: "Performance First" },
-  ];
+  { icon: Code2, label: "React & Node.js" },
+  { icon: Database, label: "MongoDB & Redis" },
+  { icon: Cloud, label: "AWS & Cloudflare" },
+  { icon: Zap, label: "AI & LLM Integration" },
+]
 
   return (
     <section id="about" className="section-padding relative">
@@ -31,18 +31,18 @@ export const AboutSection = () => {
 
             <AnimatedText delay={0.2}>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                I'm a Full Stack Developer specializing in the MERN stack, passionate 
-                about building scalable web applications that solve real-world problems. 
-                With a strong foundation in React, Node.js, and MongoDB, I create 
-                seamless user experiences backed by robust server architectures.
+                I'm a Full Stack Developer with production ownership of scalable web applications 
+  built on React, Node.js, MongoDB, and AWS. I specialize in architecting 
+  AI-powered automation systems using LLM integration — cutting manual processing 
+  time by 50% and delivering measurable engineering impact on live production platforms.
               </p>
             </AnimatedText>
 
             <AnimatedText delay={0.3}>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                My approach combines clean code practices with modern deployment 
-                strategies using AWS and Cloudflare, ensuring applications are not 
-                just functional, but fast, secure, and ready for scale.
+                From zero-downtime cloud migrations to CI/CD pipelines and Redis caching 
+  strategies, I own the full stack end-to-end — shipping apps that hit 
+  99.9% uptime, 40% faster load times, and real users in production.
               </p>
             </AnimatedText>
 
