@@ -1,5 +1,5 @@
 import { motion, Variants } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail , FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
@@ -132,11 +132,13 @@ export const HeroSection = () => {
               { icon: Github, href: "https://github.com/anshifpalempadiyan", label: "GitHub" },
               { icon: Linkedin, href: "https://linkedin.com/in/anshifpalempadiyan", label: "LinkedIn" },
               { icon: Mail, href: "mailto:anshifpalempadiyan@gmail.com", label: "Email" },
+              { icon: FileDown, href: "/resume.pdf", label: "Resume", download: true },
             ].map((social) => (
               <a
                 key={social.label}
                 href={social.href}
-                target="_blank"
+                // target="_blank"
+                target={social.download ? "_self" : "_blank"}
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary/50 text-muted-foreground transition-all duration-250 ease-out hover:bg-primary/20 hover:text-primary"
                 aria-label={social.label}
