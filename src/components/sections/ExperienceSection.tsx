@@ -6,14 +6,27 @@ const experiences = [
   {
     title: "Full Stack Developer Intern",
     company: "Avulanture",
-    period: "Jun 2025 – Dec 2025",
+    period: "Jun 2025 – Present",
     location: "Calicut, India",
-    description: "Building scalable web applications using the MERN stack, implementing RESTful APIs, and optimizing application performance.",
+    description: "Owned end-to-end architecture of a production MERN travel agency platform with JWT auth, RBAC, and live user traffic at alziyaratravels.com.",
     highlights: [
-      "Developed 5+ production-ready features serving 1000+ users",
-      "Improved API response times by 40% through optimization",
-      "Collaborated with cross-functional teams in agile environment",
-      "Implemented CI/CD pipelines for automated deployments",
+      "Designed and optimized 20+ RESTful API endpoints, improving query response time by 35%",
+      "Executed zero-downtime AWS → Linux server migration using Cloudflare Tunnel",
+      "Cut deployment cycle time by 60% via GitHub Actions CI/CD pipeline",
+      "Achieved 40% page load improvement through Cloudflare CDN + React code splitting",
+      "Reduced Time to Interactive from 3.2s → 2.1s via Redux Toolkit memoization",
+    ],
+  },
+  {
+    title: "Frontend Developer (Freelance)",
+    company: "Tradiify",
+    period: "Sep 2025",
+    location: "Remote",
+    description: "Translated pixel-perfect Figma designs into a production financial education website (tradiify.com) with full mobile responsiveness.",
+    highlights: [
+      "Achieved 98 Lighthouse performance score with 5+ responsive breakpoints",
+      "Delivered 100% cross-device layout consistency across all screen sizes",
+      "Collaborated via structured Git PR workflows across 20+ pull requests",
     ],
   },
 ];
@@ -31,7 +44,7 @@ export const ExperienceSection = () => {
           </h2>
         </AnimatedSection>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto space-y-6">
           {experiences.map((exp, index) => (
             <AnimatedSection key={exp.title} delay={index * 0.2}>
               <motion.div
