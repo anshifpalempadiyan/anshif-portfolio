@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/motion/AnimatedSection";
-import { Mail, Github, Linkedin, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Mail, Github, Linkedin, Phone, MapPin, MessageCircle , FileDown } from "lucide-react";
 
 const contactDetails = [
   { 
@@ -33,6 +33,13 @@ const contactDetails = [
     label: "LinkedIn", 
     value: "anshifpalempadiyan", 
     href: "https://linkedin.com/in/anshifpalempadiyan" 
+  },
+  { 
+    icon: FileDown, 
+    label: "Resume", 
+    value: "Download CV", 
+    href: "/resume.pdf",
+    download: true
   },
 ];
 
@@ -103,6 +110,7 @@ export const ContactSection = () => {
                     href={item.href}
                     target={item.href.startsWith('http') ? '_blank' : undefined}
                     rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    download={'download' in item && item.download ? "Anshif_Resume.pdf" : undefined}
                     className="block"
                   >
                     {content}
