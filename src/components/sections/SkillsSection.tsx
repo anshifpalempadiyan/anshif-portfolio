@@ -4,15 +4,27 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/mot
 const skillCategories = [
   {
     title: "Frontend",
-    skills: ["React", "Redux", "Next.js", "JavaScript (ES6+)", "Redux","Tailwind CSS", "HTML 5","CSS 3"],
+    skills: ["React", "Next.js", "Redux Toolkit", "Context API", "TypeScript", "Tailwind CSS", "Material UI", "JavaScript (ES6+)"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs", "Redis"],
+    skills: ["Node.js", "Express.js", "REST APIs", "Async Processing", "Scalable Architecture"],
   },
   {
-    title: "Tools & Platforms",
-    skills: ["Git", "GitHub", "AWS", "Cloudflare", "Vercel", "CI/CD"],
+    title: "Database & Cache",
+    skills: ["MongoDB", "PostgreSQL", "Redis", "Mongoose", "Query Optimization"],
+  },
+  {
+    title: "AI & LLM",
+    skills: ["OpenAI API", "Prompt Engineering", "LLM Automation", "GPT-4"],
+  },
+  {
+    title: "Auth & Security",
+    skills: ["JWT", "RBAC", "OAuth", "API Security"],
+  },
+  {
+    title: "DevOps & Cloud",
+    skills: ["AWS (EC2, S3)", "Cloudflare CDN", "GitHub Actions", "CI/CD", "PM2", "Nginx", "Vercel", "Linux Server"],
   },
 ];
 
