@@ -7,37 +7,41 @@ import { ArrowUpRight, Github, ExternalLink, ChevronDown } from "lucide-react";
 const featuredProjects = [
   {
     title: "Travel Agency Platform",
-    description: "A comprehensive travel booking platform with real-time availability, secure payments, and personalized recommendations.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
+    description: "Production MERN platform with JWT auth, RBAC, Redis caching (85% hit rate) cutting response time from 450ms → 180ms, deployed on Linux with Cloudflare Tunnel at 99.9% uptime.",
+    tech: ["React", "Node.js", "MongoDB", "Redis", "Cloudflare", "PM2"],
     image: "🌍",
     color: "from-blue-500/20 to-cyan-500/20",
-    link: "https://github.com/advodigitals/alziyara-user-frontend.git",
+    liveLink : true,
+    link: "https://alziyaratravels.com",
     github: "https://github.com/advodigitals/alziyara-user-frontend.git",
   },
   {
     title: "Tradiify",
-    description: "Financial education platform empowering users with trading knowledge, interactive courses, and real-time market insights.",
-    tech: ["Next.js", "Express", "PostgreSQL", "WebSocket"],
+    description: "Pixel-perfect Figma → production website with 98 Lighthouse score, 5+ responsive breakpoints, and 100% cross-device consistency.",
+    tech: ["HTML5", "Tailwind CSS", "Responsive Design","Git"],
     image: "📈",
     color: "from-green-500/20 to-emerald-500/20",
-    link: "https://github.com/nihalavulan/tradiify-landing.git",
+    liveLink : true,
+    link: "https://tradiify.com",
     github: "https://github.com/nihalavulan/tradiify-landing.git",
   },
   {
     title: "AI-Powered CV Parser",
-    description: "Intelligent resume parsing system using AI to extract and analyze candidate data, generating detailed persona profiles.",
-    tech: ["React", "Python", "OpenAI", "MongoDB", "FastAPI"],
+    description: "Full-stack AI recruitment tool parsing CVs across 25+ formats into role-specific candidate personas at 90% extraction accuracy with concurrent upload processing.",
+    tech: ["Node.js", "Express.js", "OpenAI API", "MongoDB", "Multer"],
     image: "🤖",
     color: "from-purple-500/20 to-pink-500/20",
+    liveLink : false,
     link: "https://github.com/anshifpalempadiyan/ai-powered-cv-parsing-assignment.git",
     github: "https://github.com/anshifpalempadiyan/ai-powered-cv-parsing-assignment.git",
   },
   {
     title: "RFP Management System",
-    description: "AI-driven Request for Proposal management platform automating document analysis and response generation.",
-    tech: ["React", "Node.js", "AI/ML", "AWS S3", "Redis"],
+    description: "Procurement automation platform using GPT-4 to convert requirements into RFPs, dispatch to vendors via email, and surface AI-scored comparisons — cutting evaluation time by 50%.",
+    tech: ["React", "Node.js", "OpenAI API", "MongoDB", "Nodemailer"],
     image: "📋",
     color: "from-orange-500/20 to-red-500/20",
+    liveLink : false,
     link: "https://github.com/anshifpalempadiyan/AI-RFP-Management-System.git",
     github: "https://github.com/anshifpalempadiyan/AI-RFP-Management-System.git",
   },
@@ -154,10 +158,10 @@ export const ProjectsSection = () => {
                     <div className="flex items-center gap-4 mt-auto pt-4 border-t border-border/30">
                       <motion.a
                         href={project.link}
-                        className="flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-250 hover:text-primary"
+                        className={` ${project.liveLink ? "flex" : "hidden" }  items-center gap-2 text-sm text-muted-foreground transition-colors duration-250 hover:text-primary`}
                       >
                         <ExternalLink size={16} />
-                        Live Demo
+                        { project.liveLink ?  "Live"  :  "Live Demo" }
                       </motion.a>
                       <motion.a
                         href={project.github}
